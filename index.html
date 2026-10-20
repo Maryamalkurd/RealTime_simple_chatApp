@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat App</title>
+  <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      background-color: #f0f2f5;
+      font-family: Segoe UI, Helvetica, Arial, sans-serif;
+    }
+
+    #message-container {
+      width: 100%;
+      max-width: 600px;
+      min-height: 100vh;
+      padding: 16px 12px 90px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      background-color: #fff;
+    }
+
+    #message-container div {
+      max-width: 70%;
+      padding: 8px 14px;
+      border-radius: 18px;
+      font-size: 15px;
+      line-height: 1.4;
+      word-wrap: break-word;
+      background-color: #e4e6eb;
+      color: #050505;
+    }
+    #message-container div.mine {
+  background-color: #0084ff;
+  color: #fff;
+  align-self: flex-end;
+}
+    #send-container {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px;
+      background-color: #fff;
+      border-top: 1px solid #e4e6eb;
+    }
+    #chat-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 600px;
+  padding: 14px 16px;
+  background-color: #fff;
+  border-bottom: 1px solid #e4e6eb;
+  font-size: 17px;
+  font-weight: 600;
+  z-index: 10;
+}
+
+    #message-input {
+      flex-grow: 1;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 20px;
+      background-color: #f0f2f5;
+      font-size: 15px;
+      outline: none;
+    }
+
+    #send-button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 20px;
+      background-color: #0084ff;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    #send-button:hover {
+      background-color: #006fd6;
+    }
+    
+  </style>
+</head>
+<body>
+    <div id="chat-header">Chat</div>
+  <div id="message-container"></div>
+  <form id="send-container">
+    <input type="text" id="message-input" placeholder="Aa" autocomplete="off">
+    <button type="submit" id="send-button">Send</button>
+  </form>
+</body>
+</html>
